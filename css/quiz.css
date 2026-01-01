@@ -32,90 +32,15 @@ body{
 }
 
 .footer{
-  margin-top: auto;
+  margin-top: auto; /* footer stays bottom when intro is short */
 }
 
 /* utility */
 .hidden{ display:none !important; }
 
 /* =========================
-   SCREEN 1: HERO (match reference)
+   Buttons
 ========================= */
-.hero{
-  width: 100%;
-  max-width: 1200px;
-  margin: 26px auto 18px auto;
-  padding: clamp(18px, 3vw, 44px);
-
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: clamp(18px, 3vw, 40px);
-
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-.hero-left{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-left h3{
-  margin: 0 0 10px 0;
-  font-weight: 700;
-  opacity: .9;
-}
-
-.hero-left h1{
-  margin: 0 0 12px 0;
-  font-size: clamp(28px, 3.2vw, 44px);
-  line-height: 1.12;
-  letter-spacing: -0.4px;
-  max-width: 560px;
-}
-
-.hero-left p{
-  margin: 0 0 22px 0;
-  color: var(--muted);
-  font-weight: 500;
-  max-width: 520px;
-}
-
-.hero-right{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.hero-right img{
-  width: min(560px, 100%);
-  height: auto;
-  border-radius: 0;
-  filter: none;
-}
-
-/* =========================
-   Buttons (match reference)
-========================= */
-.analisis-wrap{
-  display:flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-}
-
-.analisis-choice{
-  display:flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Mulai Analisis */
 .btn-main{
   appearance:none;
   border: none;
@@ -134,7 +59,6 @@ body{
 }
 .btn-main:active{ transform: translateY(0); }
 
-/* Choice buttons outlined default; filled brown on hover */
 .btn-choice{
   appearance:none;
   cursor:pointer;
@@ -154,7 +78,7 @@ body{
 .btn-choice:active{ transform: translateY(0); }
 
 /* =========================
-   SCREEN 2: Intro
+   SCREEN 1: Intro 
 ========================= */
 .quiz-intro{
   width: min(980px, 92vw);
@@ -178,10 +102,13 @@ body{
 
 .intro-card{
   width: min(860px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .intro-note{
-  margin: 0 0 14px 0;
+  margin: 0;
   font-weight: 700;
   color: var(--text);
 }
@@ -190,7 +117,6 @@ body{
   display:flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 16px;
 }
 
 .meta-item{
@@ -210,7 +136,7 @@ body{
 }
 
 /* =========================
-   SCREEN 3-10: Quiz
+   SCREEN 2: Quiz
 ========================= */
 .quiz{
   width: min(860px, 92vw);
@@ -374,27 +300,9 @@ body{
    Responsive: tablet + mobile
 ========================= */
 @media (max-width: 900px){
-  .hero{
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .hero-right{ order: -1; }
-
   .btn-main{
     width: 100%;
     max-width: 320px;
-  }
-
-  .analisis-choice{
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn-choice{
-    width: 100%;
-    max-width: 320px;
-    text-align: center;
   }
 }
 
