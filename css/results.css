@@ -1,0 +1,513 @@
+/*
+  Skinlyst – Hasil Kulit pages (dry / normal / oily)
+  Goals:
+  1) Keep desktop layout intact.
+  2) Make tablet + phone responsive.
+  3) Avoid overriding navbar/footer behavior.
+*/
+
+/* ===== Base reset ===== */
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  font-family:"Montserrat", sans-serif;
+  color:#4a3f3f;
+  background-image:url("../assets/image pink-background.jpeg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:top center;
+  background-color:#f7e9e6; /* fallback so gaps never look white */
+  overflow-x:hidden; /* prevent horizontal overflow from wide images */
+}
+
+img{ max-width:100%; height:auto; display:block; }
+button{ font-family:inherit; }
+
+/* ===== Page container rhythm ===== */
+.hero{
+  margin:50px 0 0;
+}
+
+.tabs{
+  margin:28px 0 0;          /* tighter gap below hero */
+  padding:0;
+}
+
+.tab-content{
+  margin:18px 0 0;          /* tighter + consistent gap below tabs */
+  padding:0;
+}
+
+/* Ensure tab titles sit closer to tabs (esp. Herbal) */
+.tabcontent > section > h2{ margin-top:0; }
+
+/* Keep actions spacing inside itself (prevents white strip) */
+.actions{
+  margin:24px 0 0;
+  padding:32px 16px 56px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  background:transparent;
+}
+
+/* ===== HERO ===== */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  padding:60px 80px;
+}
+
+.hero-left{ flex:1; min-width:0; max-width:620px; }
+
+.hero h1{
+  font-size:48px;
+  letter-spacing:1px;
+  color:#ffffff;
+}
+
+.hero h3{
+  margin:8px 0;
+  color:#ffffff;
+  font-weight:600;
+}
+
+.hero-desc{
+  color:rgb(158, 55, 55);
+  margin-top:8px;
+}
+
+.hero-detail{
+  margin-top:12px;
+  line-height:1.6;
+}
+
+.hero-right{ flex:0 0 auto; }
+.hero-right img{
+  width:280px;
+  border-radius:20px;
+  border:2px solid #DB8094;
+  /* keep the original “slightly left” look, but safer */
+  transform:translateX(-40px);
+}
+
+/* ===== TABS ===== */
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin:40px 0;
+  padding:0 20px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  background:#ffffff;
+  border:1px solid #d48b9a;
+  padding:10px 22px;
+  border-radius:22px;
+  cursor:pointer;
+  transition:transform 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.tab:hover{ transform:translateY(-1px); }
+
+.tab.active,
+.tab:hover{
+  background:#d48b9a;
+  color:#ffffff;
+}
+
+/* ===== TAB CONTENT / TITLES ===== */
+.tab-content{
+  text-align:center;
+  padding:20px 60px;
+}
+
+.section-title{ margin:0 0 10px; }
+
+.rekomendasi-subtext{
+  text-align:center;
+  font-size:14px;
+  color:#7a6a6a;
+  margin:8px auto 42px;
+  max-width:760px;
+  padding:0 10px;
+}
+
+/* ===== SKINCARE CARDS ===== */
+.card-container{
+  display:grid;
+  /* Auto-fit so 4 or 5 cards can sit in one row on desktop */
+  grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));
+  gap:18px;
+  max-width:1200px;
+  margin:20px auto 70px;
+  padding:0 10px;
+}
+
+.card1{
+  min-height:220px;
+  background:#f8eae7;
+  border-radius:14px;
+  box-shadow:0 6px 14px rgba(180,140,135,0.25);
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  transition:transform 180ms ease, box-shadow 180ms ease;
+}
+
+.card1:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 22px rgba(180,140,135,0.30);
+}
+
+.card1 h3{
+  color:#b36f6a;
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+.card1 p{
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* ===== WARNING SECTION ===== */
+.warning-section{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  align-items:stretch;
+  gap:18px;
+  margin:35px auto;
+  max-width:980px;
+  padding:0 10px;
+}
+
+.warning-img{
+  width:100%;
+  height:100%;
+  min-height:210px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.warning-box{
+  background:#ffffff;
+  padding:24px;
+  border-radius:14px;
+  box-shadow:0 4px 12px rgba(180,140,135,0.25);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:left;
+}
+
+.warning-box h3{ color:#5f74be; margin-bottom:10px; }
+.warning-box p{ font-size:15px; color:#4a3f3f; line-height:1.6; }
+
+/* ===== HERBAL SECTION ===== */
+.herbal-section{
+  max-width:1100px;
+  margin:28px auto 22px; /* tighter + consistent spacing */
+  padding:0 20px;
+}
+
+.herbal-section .subtitle{ margin-top:10px; color:#7a6a6a; }
+
+.top-cards{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(280px, 1fr));
+  gap:28px;
+  justify-content:center;
+  margin:18px 0 26px; /* reduce extra gap before next block */
+}
+
+.herbal-card{
+  display:flex;
+  gap:15px;
+  background:#ffffff;
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 6px 16px rgba(180,140,135,0.25);
+  transition:transform 180ms ease, box-shadow 180ms ease;
+}
+
+.herbal-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 22px rgba(180,140,135,0.28);
+}
+
+.herbal-card img{
+  width:150px;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  flex:0 0 auto;
+}
+
+.card-text{ text-align:left; min-width:0; }
+.card-text h4{
+  font-size:15px;
+  font-weight:600;
+  color:#3b6cff;
+  margin:4px 0 10px;
+}
+
+.card-text p{ font-size:13px; line-height:1.55; }
+
+/* Simple border helpers (match Figma thin pink outline) */
+.blue-border{ border:1px solid rgba(95,116,190,0.55); }
+.pink-border{ border:1px solid rgba(215,123,130,0.55); border-radius:14px; overflow:hidden; }
+.pink-bg{ background:#fde3da; border:1px solid rgba(215,123,130,0.55); }
+
+
+/* Bottom herbal block (image + text) */
+.bottom-card{
+  display:grid;
+  grid-template-columns:1fr 1.35fr;
+  gap:24px;
+  align-items:stretch;
+  margin-top:20px;
+}
+
+.skin-img img{
+  width:100%;
+  height:100%;
+  min-height:260px;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid rgba(215,123,130,0.55);
+}
+
+.herbal-info{
+  background:#ffffff;
+  border-radius:14px;
+  padding:22px;
+  box-shadow:0 6px 16px rgba(180,140,135,0.18);
+  text-align:left;
+}
+
+.herbal-info p{ line-height:1.65; }
+
+/* ===== TIPS SECTION ===== */
+.tips-section{
+  max-width:1100px;
+  margin:40px auto 0;
+  padding:0 20px;
+}
+
+.tips-section .subtitle{ color:#7a6a6a; margin-top:10px; }
+
+.tips-row{
+  display:flex;
+  align-items:center;
+  gap:26px;
+  margin-top:26px;
+}
+
+.tips-row.reverse{ flex-direction:row-reverse; }
+
+.tips-box{
+  background:#fde3da;
+  padding:26px 28px;
+  border-radius:14px;
+  box-shadow:0 6px 16px rgba(180, 120, 115, 0.25);
+  flex:1;
+  text-align:justify;
+}
+
+.tips-box h3{ color:#d77b82; margin-bottom:12px; font-size:18px; }
+.tips-box ul{ padding-left:18px; margin:0; }
+.tips-box li{ font-size:14px; margin-bottom:12px; line-height:1.5; }
+
+.tips-image img{
+  width:260px;
+  border-radius:16px;
+  border:1px solid rgba(215,123,130,0.55);
+}
+
+/* ===== ACTION BUTTONS ===== */
+
+.actions {
+  display: flex;
+  justify-content: center;   /* CENTER horizontally */
+  align-items: center;
+  gap: 16px;
+
+  padding: 40px 16px 56px;   /* spacing from content + footer */
+  background: transparent;
+}
+
+.action-btn{
+  background:#b9a19a;
+  border:none;
+  padding:12px 30px;
+  color:#ffffff;
+  border-radius:10px;
+  cursor:pointer;
+  transition:transform 160ms ease, background 160ms ease;
+}
+
+.action-btn:hover{ background:#d48b9a; transform:translateY(-1px); }
+.action-btn:active{ transform:translateY(0) scale(.99); }
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px){
+  .hero{ padding:46px 26px; gap:26px; }
+  .hero-right img{ width:260px; transform:translateX(0); }
+
+  .tab-content{ padding:18px 24px; }
+
+  .card-container{
+    grid-template-columns:repeat(2, minmax(170px, 1fr));
+    max-width:760px;
+  }
+
+  .warning-section{ grid-template-columns:1fr; }
+  .warning-img{ min-height:220px; }
+
+  .top-cards{ grid-template-columns:1fr; }
+  .bottom-card{ grid-template-columns:1fr; }
+  .skin-img img{ min-height:220px; }
+
+  .tips-row,
+  .tips-row.reverse{
+    flex-direction:column;
+    text-align:center;
+  }
+  .tips-box{ text-align:left; }
+  .tips-image img{ width:240px; }
+}
+
+/* Phone */
+@media (max-width: 520px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:34px 16px;
+  }
+  .hero-left{ max-width:100%; }
+  .hero h1{ font-size:30px; }
+  .hero-right img{ width:220px; }
+
+  .tabs{ margin:26px 0; gap:10px; }
+  .tab{ padding:10px 16px; }
+
+  .tab-content{ padding:14px 14px; }
+
+  .card-container{ grid-template-columns:1fr; }
+
+  .herbal-card{ flex-direction:column; text-align:left; }
+  .herbal-card img{ width:100%; height:180px; }
+}
+
+
+/* =========================
+   REV4 tweaks (consistent outlines + hover + spacing)
+   ========================= */
+
+/* Unified outline token */
+:root{
+  --pink-outline: 1px solid rgba(215,123,130,0.55);
+}
+
+/* Warning block (Skincare tab) – match herbal outline */
+.warning-img{
+  border: var(--pink-outline);
+  border-radius:14px;
+  display:block;
+}
+.warning-box{
+  border: var(--pink-outline);
+}
+
+/* Prevent double-thick outline on skin diagram (parent already has border) */
+.skin-img.pink-border img{
+  border:none !important;
+  border-radius:0 !important;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Make all outlined images snug (no inline gaps) */
+.tips-image img,
+.warning-img,
+.remedy-card img{
+  display:block;
+}
+
+/* Pola Hidup images – crop snugly inside border (remove white bars from source aspect) */
+.tips-image img{
+  width:260px;
+  height:260px;
+  object-fit:cover;
+  border: var(--pink-outline);
+  border-radius:16px;
+}
+
+/* Tablet/phone: allow images to expand nicely */
+@media (max-width: 900px){
+  .tips-image img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    aspect-ratio: 1 / 1;
+    object-fit:cover;
+  }
+}
+@media (max-width: 520px){
+  .tips-image img{
+    max-width:100%;
+  }
+}
+
+/* Consistent outline thickness everywhere */
+.pink-border{ border: var(--pink-outline); }
+.pink-bg{ border: var(--pink-outline); }
+.blue-border{ border:1px solid rgba(95,116,190,0.55); } /* keep blue */
+
+/* Hover effect for ALL cards + outlined images */
+.card1,
+.warning-box,
+.remedy-card,
+.herbal-info,
+.tips-box,
+.skin-img.pink-border,
+.tips-image img,
+.warning-img{
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.card1:hover,
+.warning-box:hover,
+.remedy-card:hover,
+.herbal-info:hover,
+.tips-box:hover,
+.skin-img.pink-border:hover,
+.tips-image img:hover,
+.warning-img:hover{
+  transform: translateY(-4px);
+  box-shadow:0 10px 22px rgba(180,140,135,0.30);
+}
+
+/* Buttons spacing from footer */
+.actions{
+  margin:50px 0 0;          /* keep top spacing, remove bottom margin to avoid white strip */
+  padding:0 0 45px;         /* create gap INSIDE actions section */
+  background:transparent;   /* inherits page background */
+}

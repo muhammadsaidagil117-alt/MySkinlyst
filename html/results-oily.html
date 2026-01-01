@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skinlyst | Hasil Analisis</title>
+
+  <!-- Font: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Navbar/Footer shared -->
+  <link rel="stylesheet" href="../css/navbar-footer.css" />
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="../css/results.css" />
+
+  <!-- Navbar JS shared -->
+  <script src="../js/navbar-footer.js" defer></script>
+  <!-- Page JS -->
+  <script src="../js/results.js" defer></script>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<header class="navbar">
+<a href="homepage.html" class="logo">
+  <img src="../assets/logo new1.png" alt="Skinlyst">
+</a>
+
+  <div class="hamburger" id="menuToggle">☰</div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="homepage.html">Home</a>
+    <a href="tentang.html">Tentang Kami</a>
+
+    <div class="submenu">
+      <span id="fiturToggle">Fitur ▾</span>
+      <div class="submenu-list" id="fiturMenu">
+        <a href="pp-sebelum.html">Pengalaman Pengguna</a>
+        <a href="history.html">History</a>
+      </div>
+    </div>
+
+    <a href="#kontak">Kontak</a>
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <h1>BERMINYAK</h1>
+    <h3>Hasil Tes Kulitmu</h3>
+    <p class="hero-desc">
+      Berdasarkan jawabanmu, jenis kulitmu termasuk dalam kategori berminyak.
+    </p>
+    <p class="hero-detail">
+      Kulit berminyak cenderung memproduksi sebum berlebih sehingga tampak
+      mengilap, terutama pada area T-zone.
+    </p>
+  </div>
+
+  <div class="hero-right">
+    <img src="../assets/image woman-face.jpeg" alt="Foto Wanita">
+  </div>
+</section>
+
+<!-- TAB BUTTON -->
+<section class="tabs">
+  <button class="tab active" data-tab="skincare">Rekomendasi Skincare</button>
+  <button class="tab" data-tab="herbal">Bahan Herbal</button>
+  <button class="tab" data-tab="lifestyle">Pola Hidup & Faktor</button>
+</section>
+
+<!-- TAB CONTENT -->
+<section class="tab-content">
+
+<!-- TITLE -->
+<div id="skincare"  class="tabcontent">
+<h2 class="section-title">Rekomendasi Kandungan Skincare</h2>
+<p class="rekomendasi-subtext">
+  Pilih kandungan yang sesuai kebutuhan kulitmu dan gunakan secara bertahap untuk hasil terbaik
+</p>
+
+
+  <!-- SKINCARE CARDS -->
+<div class="card-container">
+    <div class="card1">
+        <h3>Hyaluronic Acid</h3>
+        <p>Menjaga hidrasi tanpa membuat kulit berminyak. Cocok dipakai pagi dan malam.</p>
+    </div>
+
+    <div class="card1">
+        <h3>AHA/BHA</h3>
+        <p>Membersihkan pori, mengontrol produksi minyak, dan memperbaiki tekstur kulit.</p>
+    </div>
+
+    <div class="card1">
+        <h3>Vitamin C</h3>
+        <p>Mencerahkan dan melindungi kulit dari radikal bebas.</p>
+    </div>
+
+    <div class="card1">
+        <h3>Retinol</h3>
+        <p>Mengontrol minyak, mencegah jerawat, dan menyamarkan noda.</p>
+    </div>
+
+    <div class="card1">
+        <h3>Ceramide</h3>
+        <p>Memperkuat skin barrier dan mengurangi iritasi.</p>
+    </div>
+</div>
+
+<!-- WARNING BOX -->
+<div class="warning-section">
+    <img class="warning-img" src="../assets/image warning.png">
+    <div class="warning-box">
+        <h3>Peringatan Bahan Iritasi</h3>
+        <p>
+            Hindari over-cleansing dan hindari kombinasi retinol + AHA/BHA atau vitamin C + AHA/BHA agar tidak iritasi.  
+            Cuaca panas & lembap bisa membuat minyak meningkat.
+        </p>
+    </div>
+</div>
+
+
+ <!-- HERBAL SECTION -->
+  
+</div>
+<div id="herbal"  class="tabcontent">
+    <section class="herbal-section">
+  <h2>Alternatif Bahan Herbal</h2>
+  <p class="subtitle">Pilihan bahan herbal alami yang dapat mendukung rutinitas perawatan kulitmu</p>
+
+  <!-- CARD ATAS -->
+  <div class="top-cards">
+    <div class="herbal-card blue-border">
+      <img src="../assets/image sirih.jpeg" alt="Rebusan Daun Sirih">
+      <div class="card-text">
+        <h4>Rebusan Daun Sirih</h4>
+        <p>
+          Gunakan rebusan daun sirih sebagai air bilasan wajah
+          yang membantu membersihkan kulit dan mengurangi bakteri
+          penyebab jerawat.
+        </p>
+      </div>
+    </div>
+
+    <div class="herbal-card blue-border">
+      <img src="../assets/image coffe.jpeg" alt="Scrub Kopi Alami">
+      <div class="card-text">
+        <h4>Scrub Kopi Alami</h4>
+        <p>
+          Gunakan ampas kopi sebagai scrub lembut dengan pijatan
+          ringan untuk membantu membersihkan pori dan
+          menghaluskan tekstur kulit.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD BAWAH -->
+  <div class="bottom-card">
+    <div class="skin-img pink-border">
+      <img src="../assets/kulit-berminyak.png" alt="Lapisan Kulit">
+    </div>
+
+    <div class="herbal-info pink-bg">
+      <h4>🔬Cara Kerja Bahan Herbal</h4>
+      <p>
+        Penggunaan rebusan daun sirih sebagai bilasan atau kompres antiseptik
+        membantu menjaga kebersihan permukaan kulit dengan menghambat
+        pertumbuhan mikroorganisme penyebab masalah kulit, tanpa
+        mengganggu fungsi alami lapisan pelindung kulit.
+        <br><br>
+        Sementara itu, ampas kopi berperan sebagai eksfoliator alami yang
+        membantu mengangkat sel kulit mati dan residu sebum berlebih di
+        permukaan kulit. Kombinasi keduanya mendukung regulasi produksi
+        minyak, menjaga pori tetap bersih, serta membantu kulit terasa lebih
+        segar dan seimbang secara biologis.
+      </p>
+    </div>
+  </div>
+
+</section>
+</div>
+<div id="lifestyle"  class="tabcontent">
+
+
+    <!-- LIFESTYLE -->
+  <div class="content" >
+    <h2>Tips Pola Hidup & Faktor Biologis</h2>
+    <p>Pola hidup yang tepat membantu kulitmu tetap stabil, segar, dan bebas kilap</p>
+  </div>
+
+  <!-- BLOK 1 -->
+  <div class="tips-row">
+    <div class="tips-box">
+      <h3>Tips Pola Hidup Sehat</h3>
+      <ul>
+        <li><b>Konsumsi Air yang Cukup</b><br>
+        Menjaga tubuh tetap terhidrasi membantu menyeimbangkan produksi minyak alami kulit.</li>
+
+        <li><b>Kelola Stres dengan Baik</b><br>
+        Cobalah relaksasi journaling, atau olahraga ringan.</li>
+
+        <li><b>Tidur yang Cukup</b><br>
+        Kulit memperbaiki diri saat tidur, durasi tidur yang baik membantu mengontrol kondisi kulit.</li>
+
+        <li><b>Rutin Olahraga</b><br>
+        Membantu melancarkan sirkulasi darah dan menjaga kesehatan kulit secara keseluruhan.</li>
+      </ul>
+    </div>
+
+    <div class="tips-image">
+      <!-- GANTI FOTO SENDIRI -->
+      <img src="../assets/image run.jpeg" alt="Olahraga">
+    </div>
+  </div>
+
+  <!-- BLOK 2 -->
+  <div class="tips-row reverse">
+
+    <div class="tips-box">
+      <h3>Faktor Biologis yang mempengaruhi kulit</h3>
+      <ul>
+        <li><b>Hormon & Genetik</b><br>
+        Androgen (terutama DHT) meningkatkan aktivitas kelenjar sebasea dan produksi sebum.</li>
+
+        <li><b>Jenis Kelamin & Siklus Hormonal</b><br>
+        Pria cenderung lebih berminyak, pada wanita produksi sebum meningkat saat fase hormonal tertentu.</li>
+
+        <li><b>Usia</b><br>
+        Sebum tinggi pada bayi dan pubertas, lalu menurun pada usia lanjut.</li>
+
+        <li><b>Lingkungan & Iklim</b><br>
+        Cuaca panas dan lembap meningkatkan produksi minyak kulit.</li>
+
+        <li><b>Ras & Anatomi Kulit</b><br>
+        Perbedaan genetik memengaruhi ukuran pori, kepadatan kelenjar sebasea, dan komposisi sebum.</li>
+      </ul>
+    </div>
+
+    <div class="tips-image">
+      <!-- GANTI FOTO SENDIRI -->
+      <img src="../assets/image dna.jpeg" alt="DNA Kulit">
+    </div>
+
+  </div>
+
+</section>
+
+
+</div>
+</section>
+
+<!-- ACTION -->
+<section class="actions">
+  <button class="action-btn" type="button" onclick="window.location.href='scan.html'">
+    Ulangi Scan/Kuis
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer id="kontak" class="footer">
+  <div class="footer-container">
+
+    <!-- KIRI -->
+    <div class="footer-left">
+      <p class="footer-title">Glow cerdas berawal dari pemahaman yang tepat.</p>
+      <p>Wawasan kulit berbasis analisis, tanpa klaim berlebihan.</p>
+      <p>Membantu kamu memahami kondisi kulit dan responnya terhadap skincare.</p>
+
+      <p class="footer-contact">📞 +62 853-3105-6200</p>
+      <p class="footer-contact">✉️ skinlyst2025@gmail.com</p>
+      <p class="footer-contact">📷 skinlyst_</p>
+    </div>
+
+    <!-- KANAN -->
+    <div class="footer-links">
+      <div class="footer-column">
+        <a href="#">Tentang MySkinlyst</a>
+        <a href="#">Edukasi</a>
+        <a href="#">Tips Perawatan</a>
+      </div>
+
+      <div class="footer-column">
+        <a href="#">FAQ</a>
+        <a href="#">Panduan</a>
+        <a href="#">Bantuan</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

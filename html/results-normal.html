@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skinlyst | Hasil Analisis</title>
+
+  <!-- Font: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Navbar/Footer shared -->
+  <link rel="stylesheet" href="../css/navbar-footer.css" />
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="../css/results.css" />
+
+  <!-- Navbar JS shared -->
+  <script src="../js/navbar-footer.js" defer></script>
+  <!-- Page JS -->
+  <script src="../js/results.js" defer></script>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<header class="navbar">
+<a href="homepage.html" class="logo">
+  <img src="../assets/logo new1.png" alt="Skinlyst">
+</a>
+
+  <div class="hamburger" id="menuToggle">☰</div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="homepage.html">Home</a>
+    <a href="tentang.html">Tentang Kami</a>
+
+    <div class="submenu">
+      <span id="fiturToggle">Fitur ▾</span>
+      <div class="submenu-list" id="fiturMenu">
+        <a href="pp-sebelum.html">Pengalaman Pengguna</a>
+        <a href="history.html">History</a>
+      </div>
+    </div>
+
+    <a href="#kontak">Kontak</a>
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <h1>NORMAL<h1>
+    <h3>Hasil Tes Kulitmu</h3>
+    <p class="hero-desc">
+      Berdasarkan jawabanmu, jenis kulitmu termasuk dalam kategori normal.
+    </p>
+    <p class="hero-detail">
+      Kulit normal memiliki keseimbangan antara kadar minyak dan kelembapan sehingga terasa nyaman dan tidak mudah bermasalah. Tekstur kulit umumnya halus, pori-pori tidak terlalu terlihat, serta jarang mengalami iritasi.
+    </p>
+  </div>
+
+  <div class="hero-right">
+    <img src="../assets/image woman-face.jpeg" alt="Foto Wanita">
+  </div>
+</section>
+
+<!-- TAB BUTTON -->
+<section class="tabs">
+  <button class="tab active" data-tab="skincare">Rekomendasi Skincare</button>
+  <button class="tab" data-tab="herbal">Bahan Herbal</button>
+  <button class="tab" data-tab="lifestyle">Pola Hidup & Faktor</button>
+</section>
+
+<!-- TAB CONTENT -->
+<section class="tab-content">
+
+<!-- TITLE -->
+<div id="skincare"  class="tabcontent">
+<h2 class="section-title">Rekomendasi Kandungan Skincare</h2>
+<p class="rekomendasi-subtext">
+  Pilih kandungan yang sesuai kebutuhan kulitmu dan gunakan secara bertahap untuk hasil terbaik
+</p>
+
+
+  <!-- SKINCARE CARDS -->
+<div class="card-container">
+    <div class="card1">
+        <h3>Niacinamide</h3>
+        <p>Menjaga keseimbangan kulit, mendukung fungsi skin barrier, dan membuat tampilan kulit terasa lebih halus.</p>
+    </div>
+
+    <div class="card1">
+        <h3>Diamethicone</h3>
+        <p>Membentuk lapisan pelindung ringan yang membantu mengunci kelembapan dan menjaga kulit tetap nyaman.</p>
+    </div>
+
+    <div class="card1">
+        <h3>Asam Glikolat</h3>
+        <p>Mendukung proses eksfoliasi untuk membantu memperbaiki tekstur kulit agar tampak lebih cerah.</p>
+    </div>
+
+    <div class="card1">
+        <h3>Salicylic Acid</h3>
+        <p>Membersihkan pori dan mengurangi penumpuka sel kulit mati secara lembut.</p>
+    </div>
+
+    <div class="card1">
+        <h3>Retinol</h3>
+        <p>Mendukung regenerasi kulit dan membantu memperbaiki tampilan kulit secara bertahap.</p>
+    </div>
+</div>
+
+<!-- WARNING BOX -->
+<div class="warning-section">
+    <img class="warning-img" src="../assets/image warning.png">
+    <div class="warning-box">
+        <h3>Peringatan Bahan Iritasi</h3>
+        <p>
+            Hindari penggunaan retinol bersamaan dengan AHA/BHA atau vitamin C dengan AHA/BHA karena dapat meningkatkan risiko iritasi, kulit kering, dan gangguan skin barrier. Selalu sesuaikan dengan toleransi kulit dan imbangi dengan pelembap.
+        </p>
+    </div>
+</div>
+
+
+ <!-- HERBAL SECTION -->
+
+  
+</div>
+<div id="herbal"  class="tabcontent">
+    <section class="herbal-section">
+  <h2>Alternatif Bahan Herbal</h2>
+  <p class="subtitle">Pilihan bahan herbal alami yang dapat mendukung rutinitas perawatan kulitmu</p>
+
+  <!-- CARD ATAS -->
+  <div class="top-cards">
+    <div class="herbal-card blue-border">
+      <img src="../assets/scrub-beras.jpeg"alt="Scrub atau Lulur Beras">
+      <div class="card-text">
+        <h4>Scrub/Lulur Beras</h4>
+        <p>
+          Gunakan lulur beras sebagai eksfoliator lembut untuk membantu mengangkat sel kulit mati, mencerahkan kulit, memberikan efek anti-aging, serta menjaga kelembapan kulit normal.
+        </p>
+      </div>
+    </div>
+
+    <div class="herbal-card blue-border">
+      <img src="../assets/image coffe.jpeg" alt="Bilasan Wajah Teh Hijau">
+      <div class="card-text">
+        <h4>Bilasan Wajah Teh Hijau</h4>
+        <p>
+          Gunakan teh hijau dingin sebagai bilasan wajah untuk memberikan perlindungan antioksidan secara alami.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD BAWAH -->
+  <div class="bottom-card">
+    <div class="skin-img pink-border">
+      <img src="../assets/kulit-normal.png" alt="Lapisan Kulit">
+    </div>
+
+    <div class="herbal-info pink-bg">
+      <h4>🔬Cara Kerja Bahan Herbal</h4>
+      <p>
+        Penggunaan lulur beras sebagai eksfoliator lembut membantu mengangkat sel kulit mengganggu keseimbangan alami kulit, sehingga kulit tampak lebih cerah dan halus. Kandungan alami pada mati tanpa beras juga berperan dalam menjaga kelembapan serta mendukung efek anti-aging ringan pada kulit normal. 
+        <br><br>
+        Sementara itu, teh hijau dingin yang digunakan sebagai bilasan wajah memberikan perlindungan antioksidan yang membantu melindungi kulit dari paparan radikal bebas. Kombinasi keduanya mendukung regenerasi kulit, menjaga keseimbangan hidrasi, serta membantu kulit normal tetap terasa segar, sehat, dan terawat secara biologis.
+      </p>
+    </div>
+  </div>
+
+</section>
+</div>
+<div id="lifestyle"  class="tabcontent">
+
+    <!-- LIFESTYLE -->
+  <div class="content" >
+    <h2>Tips Pola Hidup & Faktor Biologis</h2>
+    <p>Pola hidup yang tepat membantu kulitmu tetap stabil, segar, dan bebas kilap</p>
+  </div>
+
+  <!-- BLOK 1 -->
+  <div class="tips-row">
+    <div class="tips-box">
+      <h3>Tips Pola Hidup Sehat</h3>
+      <ul>
+        <li><b>Jaga Keseimbangan Hidrasi</b><br>
+        Minum air cukup agar kulit tetap lembap dan segar.</li>
+
+        <li><b>Pola Makan Seimbang</b><br>
+        Konsumsi sayuran, buah, dan protein untuk menjaga kesehatan kulit dari dalam.</li>
+
+        <li><b>Rutin Olahraga</b><br>
+        Membantu menjaga sirkulasi darah dan mempertahankan kondisi kulit yang stabil.</li>
+
+        <li><b>Hindari Begadang</b><br>
+        Tidur yang cukup membantu kulit tetap bercahaya dan tidak kusam.</li>
+
+        <li><b>Gunakan Produk Sesuai Kebutuhan</b><br>
+        Tidak perlu terlalu banyak langkah, cukup skincare dasar yang konsisten.</li>
+      </ul>
+    </div>
+
+    <div class="tips-image">
+      <!-- GANTI FOTO SENDIRI -->
+      <img src="../assets/image run.jpeg" alt="Olahraga">
+    </div>
+  </div>
+
+  <!-- BLOK 2 -->
+  <div class="tips-row reverse">
+
+    <div class="tips-box">
+      <h3>Faktor Biologis yang mempengaruhi kulit</h3>
+      <ul>
+        <li><b>Lingkungan</b><br>
+        APaparan sinar UV, perubahan musim, dan polusi udara dapat memicu stres oksidatif, meningkatkan kehilangan air, serta melemahkan fungsi sawar kulit.</li>
+
+        <li><b>Perawatan Kulit (Skincare)</b><br>
+        Penggunaan produk yang tepat membantu menjaga pH, kelembapan, dan integritas kulit, sedangkan produk yang terlalu keras dapat merusak lapisan pelindung.</li>
+
+        <li><b>Usia</b><br>
+        Bertambahnya usia menurunkan regenerasi sel, produksi lipid, dan elastisitas kulit, baik secara alami maupun akibat faktor lingkungan dan hormonal.</li>
+
+        <li><b>Gaya Hidup</b><br>
+       Pola makan bergizi, keseimbangan hormon, dan pengelolaan stres berperan penting dalam menjaga kesehatan dan ketahanan kulit.</li>
+
+      </ul>
+    </div>
+
+    <div class="tips-image">
+      <!-- GANTI FOTO SENDIRI -->
+      <img src="../assets/image dna.jpeg" alt="DNA Kulit">
+    </div>
+
+  </div>
+
+</section>
+
+
+</div>
+</section>
+
+<!-- ACTION -->
+<section class="actions">
+  <button class="action-btn" type="button" onclick="window.location.href='scan.html'">
+    Ulangi Scan/Kuis
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer id="kontak" class="footer">
+  <div class="footer-container">
+
+    <!-- KIRI -->
+    <div class="footer-left">
+      <p class="footer-title">Glow cerdas berawal dari pemahaman yang tepat.</p>
+      <p>Wawasan kulit berbasis analisis, tanpa klaim berlebihan.</p>
+      <p>Membantu kamu memahami kondisi kulit dan responnya terhadap skincare.</p>
+
+      <p class="footer-contact">📞 +62 853-3105-6200</p>
+      <p class="footer-contact">✉️ skinlyst2025@gmail.com</p>
+      <p class="footer-contact">📷 skinlyst_</p>
+    </div>
+
+    <!-- KANAN -->
+    <div class="footer-links">
+      <div class="footer-column">
+        <a href="#">Tentang MySkinlyst</a>
+        <a href="#">Edukasi</a>
+        <a href="#">Tips Perawatan</a>
+      </div>
+
+      <div class="footer-column">
+        <a href="#">FAQ</a>
+        <a href="#">Panduan</a>
+        <a href="#">Bantuan</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

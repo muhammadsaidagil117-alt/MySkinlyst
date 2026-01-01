@@ -1,0 +1,284 @@
+:root {
+  --bg-main: #fce9e4;
+  --bg-soft: #f6d6cf;
+  --pink: #d88c9a;
+  --text-dark: #4a3f3f;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--text-dark);
+}
+
+/* SIDE MENU */
+.side-menu {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.side-menu a,
+.submenu span {
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    cursor: pointer;
+}
+
+.side-menu a:hover,
+.submenu span:hover {
+    font-weight: 600;
+}
+
+.submenu-list {
+    display: none;
+    padding-left: 14px;
+}
+
+.submenu-list a {
+    font-size: 14px;
+}
+
+.side-menu.show {
+  display: block;
+}
+
+.submenu-list {
+  display: none;
+}
+
+.submenu-list.show {
+  display: block;
+}
+
+/* HERO */
+.hero-white {
+  background-color: #ffffff; /* PUTIH */
+}
+.hero {
+  display: flex;
+  padding: 60px;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 55%;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+}
+
+.hero-text h3 {
+  color: #a06a6a;
+  margin-top: 5px;
+}
+
+.hero-text p {
+  margin-top: 15px;
+  line-height: 1.7;
+}
+
+.hero-image img {
+  width: 400px;
+  border-radius: 20px;
+  border: none; 
+  transition: transform 0.3s;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+/* MISI */
+.misi {
+  padding: 40px 60px;
+}
+
+.misi h2 {
+  margin-bottom: 20px;
+  color: #4a3f3f;
+}
+
+/* BOX MISI */
+.misi-box {
+  background: linear-gradient(to right, #d6b4ad, #cfa6a0);
+  border-radius: 22px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ITEM MISI */
+.misi-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: white;
+}
+
+.misi-item img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.misi-item p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* WHY */
+.why-section {
+  padding: 32px 50px;
+  background: #fff6f3;
+}
+
+.why-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #7a5a55;
+}
+
+/* GRID */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 560px));
+  gap: 16px 20px;
+  justify-content: center;
+}
+
+/* CARD */
+.why-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: #fde7e3;
+  border-radius: 24px;
+  box-shadow: 0 6px 16px rgba(219,128,148,0.35);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(219,128,148,0.5);
+}
+
+/* ICON */
+.why-card img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #f2b7c1; /* frame pink */
+  background: white;
+}
+
+/* TEXT */
+.why-text h4 {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #6b4a46;
+  margin-bottom: 3px;
+}
+
+.why-text p {
+  font-size: 14px;
+  color: #9b6f6a;
+  line-height: 1.4;
+}
+
+
+/* CATATAN */
+.note {
+  padding: 40px 60px;
+}
+
+.note-box {
+  background: linear-gradient(to right, #d6b4ad, #cfa6a0);
+  border-radius: 20px;
+  padding: 24px;
+  color: white;
+}
+
+.note-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* FOTO KECIL */
+.note-item img {
+  width: 40px;
+  height: 65px;
+  object-fit: contain;
+}
+
+/* TEKS */
+.note-text h3 {
+  margin-bottom: 6px;
+  font-size: 20px;
+}
+
+.note-text p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 48px 24px;
+    gap: 24px;
+  }
+  .hero-text { max-width: 100%; }
+  .hero-image img { width: min(420px, 100%); }
+
+  .misi { padding: 32px 24px; }
+  .why-section { padding: 28px 24px; }
+  .why-grid {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .note { padding: 32px 24px; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 16px;
+  }
+  .hero-text h1 { font-size: 28px; }
+
+  .misi-box {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .why-card {
+    align-items: flex-start;
+  }
+  .why-card img {
+    width: 48px;
+    height: 48px;
+  }
+  .note-box { padding: 18px; }
+  .note-text h3 { font-size: 18px; }
+  .note-text p { font-size: 13px; }
+}

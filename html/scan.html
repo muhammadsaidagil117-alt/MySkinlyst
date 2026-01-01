@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scan Wajah</title>
+
+  <!-- Font: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Navbar/Footer shared -->
+  <link rel="stylesheet" href="../css/navbar-footer.css" />
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="../css/scan.css" />
+
+  <!-- Navbar JS shared -->
+  <script type="module" src="../js/navbar-footer.js"></script>
+  <script type="module" src="../js/firebase-init.js"></script>
+  
+  <!-- GANTI DENGAN SCAN-FLASK.JS (BUKAN SCAN-MODEL.JS) -->
+  <script type="module" src="../js/scan-flask.js"></script>
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+<header class="navbar">
+<a href="homepage.html" class="logo">
+  <img src="../assets/logo new1.png" alt="Skinlyst">
+</a>
+
+  <div class="hamburger" id="menuToggle">☰</div>
+
+  <div class="side-menu" id="sideMenu">
+    <!-- PROFIL PENGGUNA -->
+    <a href="profile.html" id="userProfile" class="user-profile" style="display: none;">
+      <div class="user-avatar">
+        <span id="userInitial">U</span>
+      </div>
+      <div class="user-info">
+        <div id="userName" class="user-name">User</div>
+        <div id="userEmail" class="user-email">user@email.com</div>
+      </div>
+    </a>
+
+    <a href="homepage.html">Home</a>
+    <a href="tentang.html">Tentang Kami</a>
+
+    <div class="submenu">
+      <span id="fiturToggle">Fitur ▾</span>
+      <div class="submenu-list" id="fiturMenu">
+        <a href="pp-sebelum.html">Pengalaman Pengguna</a>
+        <a href="history.html">History</a>
+      </div>
+    </div>
+
+    <a href="#kontak">Kontak</a>
+    <a id="btnLogout" class="logout-btn" style="display: none;">Logout</a>
+  </div>
+</header>
+
+<!-- HERO (BG 1) -->
+<section class="hero">
+    <div class="hero-left">
+        <h3>Skinlyst</h3>
+        <h1>"Kenali Kulitmu, Temukan Solusinya"</h1>
+        <p>Dirancang untuk membantu kamu memilih skincare yang aman dan efektif.</p>
+
+        <!-- MULAI ANALISIS (PURE HTML) -->
+        <details class="analisis-box">
+            <summary class="btn-main">Mulai Analisis</summary>
+
+            <div class="analisis-choice">
+                <button class="btn-choice" type="button" id="quizJenisBtn">Kuis Jenis Kulit</button>
+                <button class="btn-choice" type="button" id="scanWajahBtn">Scan Wajah</button>
+            </div>
+        </details>
+    </div>
+
+    <div class="hero-right">
+        <img src="../assets/image skincare.png" alt="Ilustrasi Skincare">
+    </div>
+</section>
+
+<!-- SCAN (BG 2) -->
+<section class="scan-section" id="scanSection">
+    <div class="scan-image">
+        <img src="../assets/image face scan .png" alt="Scan Wajah" id="previewImage">
+        <button class="btn-main" id="uploadScanBtn">📸 Upload Foto Wajah</button>
+        <p class="scan-hint">
+          <small>Klik tombol untuk memilih foto | Format: JPG, PNG | Max: 5MB</small>
+        </p>
+    </div>
+
+    <div class="scan-guide">
+        <h3>⚠ Petunjuk Scan Wajah</h3>
+        <ol>
+            <li><b>Hadap Depan Penuh:</b> Posisikan wajah menghadap kamera secara lurus dan penuh.</li>
+            <li><b>Tidak Menutup Wajah:</b> Pastikan tidak ada rambut, kacamata gelap, atau benda lain yang menutupi mata, hidung, dan mulut.</li>
+            <li><b>Pencahayaan Merata:</b> Ambil gambar di tempat dengan cahaya yang terang dan merata, hindari bayangan pada wajah.</li>
+            <li><b>Jarak Ideal:</b> Foto dari jarak 30-50cm untuk hasil terbaik.</li>
+        </ol>
+
+        <div class="scan-info">
+          <p>🤖 <b>AI Analysis:</b> Sistem akan menganalisis jenis kulitmu secara otomatis</p>
+          <p>📊 <b>Hasil Instan:</b> Langsung diarahkan ke halaman hasil analisis</p>
+          <p>🔒 <b>Privasi Terjaga:</b> Gambar diproses secara aman di server lokal</p>
+        </div>
+    </div>
+</section>
+
+<!-- SIMPAN HASIL (BG 3 FULL PINK) -->
+<section class="save-section">
+    <h2>Simpan Hasil Analisismu</h2>
+    <p>Hasil analisis akan otomatis tersimpan di riwayat Anda.</p>
+    <p>Pantau perkembangan kondisi kulit dari waktu ke waktu.</p>
+    <button class="btn-main" type="button" onclick="window.location.href='history.html'">
+      📋 Lihat Riwayat Analisis
+    </button>
+</section>
+
+  <!-- FOOTER -->
+<footer id="kontak" class="footer">
+  <div class="footer-container">
+
+    <!-- KIRI -->
+    <div class="footer-left">
+      <p class="footer-title">Glow cerdas berawal dari pemahaman yang tepat.</p>
+      <p>Wawasan kulit berbasis analisis, tanpa klaim berlebihan.</p>
+      <p>Membantu kamu memahami kondisi kulit dan responnya terhadap skincare.</p>
+
+      <p class="footer-contact">📞 +62 853-3105-6200</p>
+      <p class="footer-contact">✉️ skinlyst2025@gmail.com</p>
+      <p class="footer-contact">📷 skinlyst_</p>
+    </div>
+
+    <!-- KANAN -->
+    <div class="footer-links">
+
+      <div class="footer-column">
+        <a href="#">Tentang MySkinlyst</a>
+        <a href="#">Edukasi</a>
+        <a href="#">Tips Perawatan</a>
+      </div>
+
+      <div class="footer-column">
+        <a href="#">FAQ</a>
+        <a href="#">Panduan</a>
+        <a href="#">Bantuan</a>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Interaksi tombol di halaman Scan Wajah
+  document.addEventListener('DOMContentLoaded', function () {
+    const quizBtn = document.getElementById('quizJenisBtn');
+    const scanBtn = document.getElementById('scanWajahBtn');
+    const scanSection = document.getElementById('scanSection');
+
+    if (quizBtn) {
+      quizBtn.addEventListener('click', function () {
+        window.location.href = 'quiz.html';
+      });
+    }
+
+    if (scanBtn && scanSection) {
+      scanBtn.addEventListener('click', function () {
+        scanSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+  });
+</script>
+
+<style>
+  .scan-hint {
+    margin-top: 10px;
+    color: #666;
+    font-size: 13px;
+  }
+
+  .scan-info {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffeef8 0%, #fff5f0 100%);
+    border-radius: 12px;
+    border-left: 4px solid #e8b298;
+  }
+
+  .scan-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .scan-info p:last-child {
+    margin-bottom: 0;
+  }
+
+  #previewImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  #previewImage.has-image {
+    border: 3px solid #e8b298;
+    box-shadow: 0 5px 20px rgba(232, 178, 152, 0.3);
+  }
+</style>
+
+</body>
+</html>

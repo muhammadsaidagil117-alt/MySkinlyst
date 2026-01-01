@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengalaman Pengguna - Setelah Bagikan</title>
+
+  <!-- Font: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Navbar/Footer shared -->
+  <link rel="stylesheet" href="../css/navbar-footer.css" />
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="../css/pp-sesudah.css" />
+
+  <!-- Navbar JS shared -->
+  <script src="../js/navbar-footer.js" defer></script>
+  <!-- Page JS -->
+  <script src="../js/pp-sesudah.js" defer></script>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+<header class="navbar">
+<a href="homepage.html" class="logo">
+  <img src="../assets/logo new1.png" alt="Skinlyst">
+</a>
+
+  <div class="hamburger" id="menuToggle">☰</div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="homepage.html">Home</a>
+    <a href="tentang.html">Tentang Kami</a>
+
+    <div class="submenu">
+      <span id="fiturToggle">Fitur ▾</span>
+      <div class="submenu-list" id="fiturMenu">
+        <a href="pp-sebelum.html">Pengalaman Pengguna</a>
+        <a href="profile.html">History</a>
+      </div>
+    </div>
+
+    <a href="#kontak">Kontak</a>
+  </div>
+</header>
+
+  <main class="pp-page">
+    <section class="pp-hero" aria-labelledby="pp-title">
+      <div class="pp-wrap">
+        <h1 id="pp-title" class="pp-title">PENGALAMAN<br/>PENGGUNA</h1>
+        <p class="pp-tagline">Temukan pengalaman nyata dari para pengguna</p>
+        <p class="pp-desc">
+          Skinlyst menghadirkan pengalaman yang nyaman dan intuitif, membantu pengguna memahami kondisi kulit dan
+          rekomendasi perawatan dengan mudah
+        </p>
+
+        <div class="pp-list" id="ppList" role="list">
+          <!-- Card dari user akan di-inject via JS -->
+        </div>
+
+        <div class="pp-actions">
+          <a class="pp-btn" href="pp-sebelum.html">BAGIKAN CERITAMU</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+<footer id="kontak" class="footer">
+  <div class="footer-container">
+
+    <!-- KIRI -->
+    <div class="footer-left">
+      <p class="footer-title">Glow cerdas berawal dari pemahaman yang tepat.</p>
+      <p>Wawasan kulit berbasis analisis, tanpa klaim berlebihan.</p>
+      <p>Membantu kamu memahami kondisi kulit dan responnya terhadap skincare.</p>
+
+      <p class="footer-contact">📞 +62 853-3105-6200</p>
+      <p class="footer-contact">✉️ skinlyst2025@gmail.com</p>
+      <p class="footer-contact">📷 skinlyst_</p>
+    </div>
+
+    <!-- KANAN -->
+    <div class="footer-links">
+
+      <div class="footer-column">
+        <a href="#">Tentang Skinlyst</a>
+        <a href="#">Edukasi</a>
+        <a href="#">Tips Perawatan</a>
+      </div>
+
+      <div class="footer-column">
+        <a href="#">FAQ</a>
+        <a href="#">Panduan</a>
+        <a href="#">Bantuan</a>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

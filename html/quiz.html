@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Jenis Kulit | MySkinlyst</title>
+
+  <!-- Font: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Shared -->
+  <link rel="stylesheet" href="../css/navbar-footer.css" />
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="../css/quiz.css" />
+
+  <!-- Shared JS -->
+  <script src="../js/navbar-footer.js" defer></script>
+  <!-- Page JS -->
+  <script src="../js/quiz.js" defer></script>
+</head>
+
+<body>
+   <!-- NAVBAR -->
+<header class="navbar">
+<a href="homepage.html" class="logo">
+  <img src="../assets/logo new1.png" alt="Skinlyst">
+</a>
+
+  <div class="hamburger" id="menuToggle">☰</div>
+
+  <div class="side-menu" id="sideMenu">
+    <!-- PROFIL PENGGUNA -->
+    <a href="profile.html" id="userProfile" class="user-profile" style="display: none;">
+      <div class="user-avatar">
+        <span id="userInitial">U</span>
+      </div>
+      <div class="user-info">
+        <div id="userName" class="user-name">User</div>
+        <div id="userEmail" class="user-email">user@email.com</div>
+      </div>
+    </a>
+
+    <a href="homepage.html">Home</a>
+    <a href="tentang.html">Tentang Kami</a>
+
+    <div class="submenu">
+      <span id="fiturToggle">Fitur ▾</span>
+      <div class="submenu-list" id="fiturMenu">
+        <a href="pp-sebelum.html">Pengalaman Pengguna</a>
+        <a href="profile.html">History</a>
+      </div>
+    </div>
+
+    <a href="#kontak">Kontak</a>
+    <a id="btnLogout" class="logout-btn" style="display: none;">Logout</a>
+  </div>
+  </header>
+
+  <!-- MAIN (for sticky footer) -->
+  <main class="main-content">
+    <!-- SCREEN 1: HERO -->
+    <section class="hero screen" id="screen-hero" aria-label="Hero">
+      <div class="hero-left">
+        <h3>Skinlyst</h3>
+        <h1>“Kenali Kulitmu, Temukan Solusinya”</h1>
+        <p>Dirancang untuk membantu kamu memilih skincare yang aman dan efektif.</p>
+
+        <div class="analisis-wrap">
+          <button class="btn-main" id="mulaiAnalisisBtn" type="button">Mulai Analisis</button>
+
+          <div class="analisis-choice hidden" id="analisisChoice" aria-hidden="true">
+            <button class="btn-choice" type="button" id="quizJenisBtn">Kuis Jenis Kulit</button>
+            <button class="btn-choice" type="button" id="scanWajahBtn">Scan Wajah</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="../assets/image skincare.png" alt="Ilustrasi Skincare">
+      </div>
+    </section>
+
+    <!-- SCREEN 2: QUIZ INTRO -->
+    <section class="quiz-intro screen hidden" id="screen-intro" aria-label="Intro Kuis">
+      <div class="intro-wrap">
+        <div class="card intro-card">
+          <p class="intro-note">
+            Tenang, tidak ada jawaban benar atau salah 😊 Pilih yang paling sesuai dengan kondisi kulitmu.
+          </p>
+
+          <div class="intro-meta">
+            <div class="meta-item">
+              <span class="meta-dot" aria-hidden="true"></span>
+              <span>Total pertanyaan: <strong>8</strong></span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-dot" aria-hidden="true"></span>
+              <span>Jawabanmu bersifat <strong>anonim</strong></span>
+            </div>
+          </div>
+
+          <button class="btn-main" id="mulaiSekarangBtn" type="button">Mulai Sekarang</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 3-10: QUESTIONS -->
+    <section class="quiz screen hidden" id="screen-quiz" aria-label="Kuis Jenis Kulit">
+      <div class="quiz-shell">
+        <!-- Progress -->
+        <div class="progress-row" aria-label="Progress Kuis">
+          <div class="progress-label">
+            <span>Progres Bar:</span>
+            <span class="progress-text" id="progressText">0 / 8</span>
+          </div>
+
+          <div class="progress-track" role="progressbar"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+               aria-label="Progress bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <!-- Question card -->
+        <div class="card quiz-card" id="questionCard">
+          <div class="question-head">
+            <p class="question-number" id="questionNumber">1 / 8</p>
+            <h2 class="question-title" id="questionTitle">Pertanyaan</h2>
+          </div>
+
+          <div class="options" id="optionsWrap" role="radiogroup" aria-label="Pilihan jawaban">
+            <!-- options injected here -->
+          </div>
+
+          <div class="nav-row">
+            <button class="btn-nav btn-ghost" id="prevBtn" type="button">← Sebelumnya</button>
+
+            <button class="btn-nav btn-next" id="nextBtn" type="button" disabled>Selanjutnya →</button>
+            <button class="btn-nav btn-next hidden" id="resultBtn" type="button" disabled>Lihat Hasil</button>
+          </div>
+        </div>
+
+        <p class="quiz-hint" id="quizHint" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="kontak" class="footer">
+    <div class="footer-container">
+
+      <!-- KIRI -->
+      <div class="footer-left">
+        <p class="footer-title">Glow cerdas berawal dari pemahaman yang tepat.</p>
+        <p>Wawasan kulit berbasis analisis, tanpa klaim berlebihan.</p>
+        <p>Membantu kamu memahami kondisi kulit dan responnya terhadap skincare.</p>
+
+        <p class="footer-contact">📞 +62 853-3105-6200</p>
+        <p class="footer-contact">✉️ skinlyst2025@gmail.com</p>
+        <p class="footer-contact">📷 skinlyst_</p>
+      </div>
+
+      <!-- KANAN -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <a href="#">Tentang MySkinlyst</a>
+          <a href="#">Edukasi</a>
+          <a href="#">Tips Perawatan</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="#">FAQ</a>
+          <a href="#">Panduan</a>
+          <a href="#">Bantuan</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</body>
+</html>

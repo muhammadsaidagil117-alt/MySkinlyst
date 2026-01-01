@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengalaman Pengguna - Bagikan</title>
+
+    <!-- Font: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Navbar/Footer shared -->
+    <link rel="stylesheet" href="../css/navbar-footer.css" />
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../css/login.css" />
+
+    <!-- Page JS -->
+    <script type="module" src="../js/login.js"></script>
+  </head>
+
+  <body>
+    <!-- LOGIN -->
+    <section class="login-bg">
+      <div class="login-card">
+        <form id="loginForm">
+          <label>Email</label>
+          <input type="email" id="loginEmail" placeholder="Enter your email" />
+
+          <label>Password</label>
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter your password"
+            />
+            <span class="eye-icon" id="togglePassword"></span>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="btn-login">Log In</button>
+          </div>
+        </form>
+        <div class="social-login">
+          <button type="button" class="btn-google" id="btnGoogleLogin">
+            <img
+              src="https://developers.google.com/identity/images/g-logo.png"
+              alt="Google"
+            />
+            Login dengan Google
+          </button>
+
+          <button type="button" class="btn-guest" id="btnGuestLogin">
+            Login sebagai Tamu
+          </button>
+        </div>
+        <p style="text-align: center; margin-top: 20px; color: #666">
+          Belum punya akun?
+          <a
+            href="register.html"
+            style="color: #e8b298; font-weight: 600; text-decoration: none"
+            >Daftar di sini</a
+          >
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

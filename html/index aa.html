@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skinlyst — Landing</title>
+
+  <!-- Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- shared navbar/footer -->
+  <link rel="stylesheet" href="../css/navbar-footer.css" />
+  <!-- page css -->
+  <link rel="stylesheet" href="../css/index.css" />
+
+  
+  
+
+
+
+</head>
+
+<body>
+
+  <script type="module">
+    // Import fungsi dari check-auth.js
+    import { checkAuthAndRedirect } from '../js/check-auth.js';
+
+    // Panggil ketika tombol "Coba Sekarang" diklik
+    document.getElementById('btnCobaSekarang').addEventListener('click', (e) => {
+      e.preventDefault(); // Cegah link default
+      checkAuthAndRedirect('homepage.html'); // Check auth, lalu redirect
+    });
+
+    // Panggil ketika link "Pengalaman Pengguna" diklik
+    document.getElementById('linkPengalamanPengguna').addEventListener('click', (e) => {
+      e.preventDefault();
+      checkAuthAndRedirect('pp-sebelum.html');
+    });
+
+    // Panggil ketika link "History" diklik
+    document.getElementById('linkHistory').addEventListener('click', (e) => {
+      e.preventDefault();
+      checkAuthAndRedirect('history.html');
+    });
+  </script>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="homepage.html" class="logo">
+      <img src="../assets/logo new1.png" alt="Skinlyst">
+    </a>
+
+    <div class="hamburger" id="menuToggle">☰</div>
+
+    <div class="side-menu" id="sideMenu">
+      <a href="homepage.html">Home</a>
+      <a href="tentang.html">Tentang Kami</a>
+
+      <div class="submenu">
+        <span id="fiturToggle">Fitur ▾</span>
+        <div class="submenu-list" id="fiturMenu">
+          <a href="pp-sebelum.html">Pengalaman Pengguna</a>
+          <a href="profile.html">History</a>
+        </div>
+      </div>
+
+      <a href="#kontak">Kontak</a>
+    </div>
+  </header>
+
+  <main class="index-page">
+    <!-- SECTION 1: hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 id="hero-title">GLOW SMARTER,<br/>SHINE BRIGHTER</h1>
+          <p class="hero-sub">
+            Tingkatkan perawatan kulitmu. Fakta dan hasil nyata tanpa basa-basi, hanya tips seru dan pembongkaran mitos untuk semua jenis kulit.
+          </p>
+
+          <a class="btn-primary" href="homepage.html">Coba Sekarang</a>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-image-wrap">
+            <img
+              src="../assets/image index 1.avif"
+              alt="Skincare products on soft fabric"
+              class="hero-image"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: features -->
+    <section class="features" aria-labelledby="features-title">
+      <div class="container">
+        <h2 id="features-title" class="section-title">Level up your skin routine</h2>
+
+        <div class="feature-grid">
+          <article class="feature-card" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path d="M7.2 11.2c-1.6 0-3 1.2-3 3.3 0 1.9 1.2 3.5 3.1 3.5 1.8 0 3.2-1.3 3.2-3.4 0-3-1.8-6.4-5.1-8.6l-.8 1.1c1.5 1.2 2.4 2.6 2.6 4.1-.2 0-.4 0-.6 0Zm9.6 0c-1.6 0-3 1.2-3 3.3 0 1.9 1.2 3.5 3.1 3.5 1.8 0 3.2-1.3 3.2-3.4 0-3-1.8-6.4-5.1-8.6l-.8 1.1c1.5 1.2 2.4 2.6 2.6 4.1-.2 0-.4 0-.6 0Z"/>
+              </svg>
+            </div>
+            <h3>Quick Tips</h3>
+            <p>Tutorial singkat untuk semua jenis kulit. Belajar cepat, glowing lebih cepat.</p>
+          </article>
+
+          <article class="feature-card" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path d="M4 4h16v11H7.6L4 18.2V4Zm2 2v8.7L6.9 13H18V6H6Z"/>
+              </svg>
+            </div>
+            <h3>Science Facts</h3>
+            <p>Tanpa basa-basi, hanya fakta. Skincare berbasis sains jadi lebih mudah dipahami.</p>
+          </article>
+
+          <article class="feature-card" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path d="M20 6H4v12h16V6Zm-2 2-6 4.6L6 8h12Zm-12 8V10l6 4.6L18 10v6H6Z"/>
+              </svg>
+            </div>
+            <h3>Trends &amp; News</h3>
+            <p>Bahan yang lagi hype, hasil yang nyata. Tetap update dengan tren skincare terbaru.</p>
+          </article>
+
+          <article class="feature-card" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path d="M9.2 16.2 4.8 11.8l1.4-1.4 3 3 8-8 1.4 1.4-9.4 9.4Z"/>
+              </svg>
+            </div>
+            <h3>Real Results</h3>
+            <p>Glow-up versi pelajar. Rutinitas jujur, perubahan yang beneran kerasa.</p>
+          </article>
+
+          <article class="feature-card" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path d="M12 21s-7.2-4.6-9.6-9C.6 7.8 3 5 6.2 5c1.8 0 3.1 1 3.8 2 .7-1 2-2 3.8-2C17 5 19.4 7.8 21.6 12c-2.4 4.4-9.6 9-9.6 9Z"/>
+              </svg>
+            </div>
+            <h3>Ask Experts</h3>
+            <p>Ahli kami bantu jawab pertanyaan kulit kamu yang paling tricky.</p>
+          </article>
+
+          <article class="feature-card" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path d="M12 17.3 6.2 20.7l1.6-6.6L2.6 9.7l6.8-.6L12 2.8l2.6 6.3 6.8.6-5.2 4.4 1.6 6.6L12 17.3Z"/>
+              </svg>
+            </div>
+            <h3>Fun Quizzes</h3>
+            <p>Temukan yang paling cocok lewat kuis seru sesuai kebutuhan kulitmu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: posts -->
+    <section class="posts" aria-labelledby="posts-title">
+      <div class="container">
+        <h2 id="posts-title" class="section-title">Your daily skin fix, reimagined</h2>
+
+        <div class="post-grid">
+          <article class="post-card" tabindex="0">
+            <div class="post-img">
+              <img src="../assets/image index breakout.avif" alt="Breakout skincare topic" loading="lazy">
+            </div>
+            <h3>Breakout breakdown</h3>
+            <p>Kenapa jerawat bisa muncul dan cara mencegahnya.</p>
+          </article>
+
+          <article class="post-card" tabindex="0">
+            <div class="post-img">
+              <img src="../assets/image index move.avif" alt="Moisture tips topic" loading="lazy">
+            </div>
+            <h3>Moisture moves</h3>
+            <p>Trik simpel biar kulit glowing seharian.</p>
+          </article>
+
+          <article class="post-card" tabindex="0">
+            <div class="post-img">
+              <img src="../assets/image index decoded.avif" alt="SPF topic" loading="lazy">
+            </div>
+            <h3>SPF decoded</h3>
+            <p>Perlindungan dari matahari jadi gampang dan tetap keren.</p>
+          </article>
+
+          <article class="post-card" tabindex="0">
+            <div class="post-img">
+              <img src="../assets/image index fof.avif" alt="Myth-busting topic" loading="lazy">
+            </div>
+            <h3>Fact or fiction?</h3>
+            <p>Kami bongkar mitos skincare, tanpa filter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="kontak" class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-title">Glow cerdas berawal dari pemahaman yang tepat.</p>
+        <p>Wawasan kulit berbasis analisis, tanpa klaim berlebihan.</p>
+        <p>Membantu kamu memahami kondisi kulit dan responnya terhadap skincare.</p>
+
+        <p class="footer-contact">📞 +62 853-3105-6200</p>
+        <p class="footer-contact">✉️ skinlyst2025@gmail.com</p>
+        <p class="footer-contact">📷 skinlyst_</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <a href="#">Tentang Skinlyst</a>
+          <a href="#">Edukasi</a>
+          <a href="#">Tips Perawatan</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="#">FAQ</a>
+          <a href="#">Panduan</a>
+          <a href="#">Bantuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

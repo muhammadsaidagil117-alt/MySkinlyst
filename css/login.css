@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* SIDE MENU */
+.side-menu {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.side-menu a,
+.submenu span {
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    cursor: pointer;
+}
+
+.side-menu a:hover,
+.submenu span:hover {
+    font-weight: 600;
+}
+
+.submenu-list {
+    display: none;
+    padding-left: 14px;
+}
+
+.submenu-list a {
+    font-size: 14px;
+}
+
+.side-menu.show {
+  display: block;
+}
+
+.submenu-list {
+  display: none;
+}
+
+.submenu-list.show {
+  display: block;
+}
+
+/* LOGIN */
+.login-bg {
+    min-height: 100vh;
+    background: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    width: min(720px, 55%);
+    background: #fff3ef;
+    padding: 45px;
+    border-radius: 28px;
+}
+
+label {
+    color: #e28ca1;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #eac3bb;
+    margin-bottom: 22px;
+}
+
+/* PASSWORD */
+.password-wrapper {
+    position: relative;
+}
+
+
+.eye-icon {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 18px;
+    height: 18px;
+    background: url("https://cdn-icons-png.flaticon.com/512/159/159604.png") no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.eye-icon.show {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/2767/2767146.png");
+}
+
+
+/* BUTTON */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 12px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .login-card {
+    width: min(720px, 80%);
+    padding: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-bg {
+    padding: 28px 16px;
+    align-items: flex-start;
+  }
+  .login-card {
+    width: 100%;
+    padding: 22px;
+    border-radius: 20px;
+  }
+  .button-group {
+    flex-direction: column;
+  }
+  button {
+    width: 100%;
+  }
+}
+
+button {
+    padding: 14px 24px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.btn-login {
+    background: #a1766b;
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+/* SOCIAL LOGIN */
+.social-login {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.btn-google {
+    background: white;
+    color: #444;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.btn-google img {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-google:hover {
+    background: #f7f7f7;
+}
+
+.btn-guest {
+    background: transparent;
+    border: 1px dashed #a1766b;
+    color: #a1766b;
+    font-weight: 600;
+}
+
+.btn-guest:hover {
+    background: #fff3ef;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar - MySkinlyst</title>
+
+  <!-- Font: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Navbar/Footer shared -->
+  <link rel="stylesheet" href="../css/navbar-footer.css" />
+  <!-- Page CSS (pakai CSS yang sama dengan login) -->
+  <link rel="stylesheet" href="../css/login.css" />
+
+  <!-- Page JS -->
+  <script type="module" src="../js/register.js"></script>
+</head>
+
+<body>
+
+<!-- REGISTER -->
+<section class="login-bg">
+    <div class="login-card">
+        
+        <h2 style="text-align: center; margin-bottom: 20px;">Daftar Akun Baru</h2>
+
+        <form id="registerForm">
+
+            <label>Nama Lengkap</label>
+            <input type="text" id="registerName" placeholder="Masukkan nama lengkap" required>
+
+            <label>Email</label>
+            <input type="email" id="registerEmail" placeholder="Masukkan email" required>
+
+            <label>Password</label>
+            <div class="password-wrapper">
+                <input type="password" id="registerPassword" placeholder="Minimal 6 karakter" required>
+                <span class="eye-icon" id="togglePassword"></span>
+            </div>
+
+            <label>Konfirmasi Password</label>
+            <div class="password-wrapper">
+                <input type="password" id="registerConfirmPassword" placeholder="Ulangi password" required>
+                <span class="eye-icon" id="toggleConfirmPassword"></span>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn-login">Daftar</button>
+            </div>
+
+        </form>
+
+        <div class="social-login">
+          <button type="button" class="btn-google" id="btnGoogleRegister">
+            <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
+            Daftar dengan Google
+          </button>
+        </div>
+
+        <!-- Link ke Login -->
+        <p style="text-align: center; margin-top: 20px; color: #666;">
+            Sudah punya akun? 
+            <a href="login.html" style="color: #E8B298; font-weight: 600; text-decoration: none;">Login di sini</a>
+        </p>
+
+    </div>
+</section>
+
+<script>
+  // Toggle password visibility untuk Password
+  document.getElementById('togglePassword')?.addEventListener('click', function() {
+    const passwordInput = document.getElementById('registerPassword');
+    const type = passwordInput.type === 'password' ? 'text' : 'password';
+    passwordInput.type = type;
+    // Ubah class untuk CSS styling
+    this.classList.toggle('show');
+  });
+
+  // Toggle password visibility untuk Konfirmasi Password
+  document.getElementById('toggleConfirmPassword')?.addEventListener('click', function() {
+    const passwordInput = document.getElementById('registerConfirmPassword');
+    const type = passwordInput.type === 'password' ? 'text' : 'password';
+    passwordInput.type = type;
+    // Ubah class untuk CSS styling
+    this.classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>

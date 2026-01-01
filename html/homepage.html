@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengalaman Pengguna - Bagikan</title>
+
+  <!-- Font: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Navbar/Footer shared -->
+  <link rel="stylesheet" href="../css/navbar-footer.css" />
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="../css/homepage.css" />
+
+  <!-- Navbar JS shared -->
+  <script type="module" src="../js/firebase-init.js"></script>
+  <script type="module" src="../js/navbar-footer.js"></script>
+  <script type="module" src="../js/auth-guard.js"></script>
+
+
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+<header class="navbar">
+<a href="homepage.html" class="logo">
+  <img src="../assets/logo new1.png" alt="Skinlyst">
+</a>
+
+  <div class="hamburger" id="menuToggle">☰</div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="profile.html" id="userProfile" class="user-profile" style="display: none;">
+    <div class="user-avatar">
+      <span id="userInitial">U</span>
+    </div>
+    <div class="user-info">
+      <div id="userName" class="user-name">User</div>
+      <div id="userEmail" class="user-email">user@email.com</div>
+    </div>
+  </a>
+    <a href="homepage.html">Home</a>
+    <a href="tentang.html">Tentang Kami</a>
+
+    <div class="submenu">
+      <span id="fiturToggle">Fitur ▾</span>
+      <div class="submenu-list" id="fiturMenu">
+        <a href="pp-sebelum.html">Pengalaman Pengguna</a>
+        <a href="profile.html">History</a>
+      </div>
+    </div>
+
+    <a href="#kontak">Kontak</a>
+    <a  id="btnLogout" class="logout-btn">Logout</a>
+
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-left">
+        <img src="../assets/image login.png" alt="Ilustrasi Skincare">
+    </div>
+
+    <div class="hero-right">
+        <h2>“Mari mulai perjalanan<br>kulit Sehatmu”</h2>
+    </div>
+</section>
+
+<!-- CONTENT SECTION -->
+<section class="content">
+
+    <div class="content-text">
+        <h3>MySkinlyst</h3>
+        <h2>“Kenali Kulitmu, Temukan Solusinya”</h2>
+        <p>
+            Didesain untuk membantu kamu memilih skincare yang aman dan
+            efektif sesuai dengan kondisi kulitmu.
+        </p>
+
+        <button class="btn-main" type="button" onclick="window.location.href='scan.html'">Mulai Analisis</button>
+    </div>
+
+    <div class="content-image">
+        <img src="../assets/image skincare.png">
+    </div>
+
+</section>
+
+  <!-- FOOTER -->
+<footer id="kontak" class="footer">
+  <div class="footer-container">
+
+    <!-- KIRI -->
+    <div class="footer-left">
+      <p class="footer-title">Glow cerdas berawal dari pemahaman yang tepat.</p>
+      <p>Wawasan kulit berbasis analisis, tanpa klaim berlebihan.</p>
+      <p>Membantu kamu memahami kondisi kulit dan responnya terhadap skincare.</p>
+
+      <p class="footer-contact">📞 +62 853-3105-6200</p>
+      <p class="footer-contact">✉️ skinlyst2025@gmail.com</p>
+      <p class="footer-contact">📷 skinlyst_</p>
+    </div>
+
+    <!-- KANAN -->
+    <div class="footer-links">
+
+      <div class="footer-column">
+        <a href="#">Tentang MySkinlyst</a>
+        <a href="#">Edukasi</a>
+        <a href="#">Tips Perawatan</a>
+      </div>
+
+      <div class="footer-column">
+        <a href="#">FAQ</a>
+        <a href="#">Panduan</a>
+        <a href="#">Bantuan</a>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
