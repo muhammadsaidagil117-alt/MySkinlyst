@@ -17,7 +17,7 @@ if (form) {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      window.location.href = "homepage.html";
+      window.location.href = "/";
     } catch (err) {
       alert("Login gagal: " + err.message);
     }
