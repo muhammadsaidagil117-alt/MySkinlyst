@@ -1,7 +1,7 @@
 // scan-flask.js - Frontend untuk Flask Backend
 // File ini menghubungkan scan.html dengan Flask API
 
-const FLASK_API_URL = 'http://localhost:5000/predict';
+const FLASK_API_URL = '/predict';
 
 // Mapping hasil prediksi ke halaman hasil
 const SKIN_TYPE_PAGES = {
