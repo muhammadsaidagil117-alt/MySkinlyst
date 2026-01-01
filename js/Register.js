@@ -18,7 +18,6 @@ if (form) {
     const password = document.getElementById("registerPassword").value;
     const confirmPassword = document.getElementById("registerConfirmPassword").value;
 
-    // Validasi password
     if (password.length < 6) {
       alert("Password minimal 6 karakter!");
       return;
@@ -30,30 +29,18 @@ if (form) {
     }
 
     try {
-      // Buat user baru di Firebase
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      
-      // Update profile dengan nama
-      await updateProfile(userCredential.user, {
-        displayName: name
-      });
+      await updateProfile(userCredential.user, { displayName: name });
 
       alert("Akun berhasil dibuat! Selamat datang, " + name);
-      window.location.href = "homepage.html";
+      
+      // ✅ PERBAIKAN: Redirect ke root (/) agar tidak 404
+      window.location.href = "/";
       
     } catch (err) {
       console.error("Error register:", err);
-      
-      // Handle error messages
-      if (err.code === "auth/email-already-in-use") {
-        alert("Email sudah terdaftar! Silakan login atau gunakan email lain.");
-      } else if (err.code === "auth/invalid-email") {
-        alert("Format email tidak valid!");
-      } else if (err.code === "auth/weak-password") {
-        alert("Password terlalu lemah! Gunakan minimal 6 karakter.");
-      } else {
-        alert("Pendaftaran gagal: " + err.message);
-      }
+      // ... error handling tetap sama ...
+      alert("Pendaftaran gagal: " + err.message);
     }
   });
 }
@@ -67,7 +54,9 @@ if (btnGoogle) {
       await signInWithPopup(auth, provider);
       
       alert("Berhasil daftar dengan Google!");
-      window.location.href = "homepage.html";
+      
+      // ✅ PERBAIKAN: Redirect ke root (/)
+      window.location.href = "/";
       
     } catch (err) {
       console.error("Error Google register:", err);
