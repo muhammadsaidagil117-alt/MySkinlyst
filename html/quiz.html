@@ -22,68 +22,47 @@
 </head>
 
 <body>
-   <!-- NAVBAR -->
-<header class="navbar">
-<a href="homepage.html" class="logo">
-  <img src="../assets/logo new1.png" alt="Skinlyst">
-</a>
-
-  <div class="hamburger" id="menuToggle">☰</div>
-
-  <div class="side-menu" id="sideMenu">
-    <!-- PROFIL PENGGUNA -->
-    <a href="profile.html" id="userProfile" class="user-profile" style="display: none;">
-      <div class="user-avatar">
-        <span id="userInitial">U</span>
-      </div>
-      <div class="user-info">
-        <div id="userName" class="user-name">User</div>
-        <div id="userEmail" class="user-email">user@email.com</div>
-      </div>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="homepage.html" class="logo">
+      <img src="../assets/logo new1.png" alt="Skinlyst">
     </a>
 
-    <a href="homepage.html">Home</a>
-    <a href="tentang.html">Tentang Kami</a>
+    <div class="hamburger" id="menuToggle">☰</div>
 
-    <div class="submenu">
-      <span id="fiturToggle">Fitur ▾</span>
-      <div class="submenu-list" id="fiturMenu">
-        <a href="pp-sebelum.html">Pengalaman Pengguna</a>
-        <a href="profile.html">History</a>
+    <div class="side-menu" id="sideMenu">
+      <!-- PROFIL PENGGUNA -->
+      <a href="profile.html" id="userProfile" class="user-profile" style="display: none;">
+        <div class="user-avatar">
+          <span id="userInitial">U</span>
+        </div>
+        <div class="user-info">
+          <div id="userName" class="user-name">User</div>
+          <div id="userEmail" class="user-email">user@email.com</div>
+        </div>
+      </a>
+
+      <a href="homepage.html">Home</a>
+      <a href="tentang.html">Tentang Kami</a>
+
+      <div class="submenu">
+        <span id="fiturToggle">Fitur ▾</span>
+        <div class="submenu-list" id="fiturMenu">
+          <a href="pp-sebelum.html">Pengalaman Pengguna</a>
+          <a href="profile.html">History</a>
+        </div>
       </div>
-    </div>
 
-    <a href="#kontak">Kontak</a>
-    <a id="btnLogout" class="logout-btn" style="display: none;">Logout</a>
-  </div>
+      <a href="#kontak">Kontak</a>
+      <a id="btnLogout" class="logout-btn" style="display: none;">Logout</a>
+    </div>
   </header>
 
   <!-- MAIN (for sticky footer) -->
   <main class="main-content">
-    <!-- SCREEN 1: HERO -->
-    <section class="hero screen" id="screen-hero" aria-label="Hero">
-      <div class="hero-left">
-        <h3>Skinlyst</h3>
-        <h1>“Kenali Kulitmu, Temukan Solusinya”</h1>
-        <p>Dirancang untuk membantu kamu memilih skincare yang aman dan efektif.</p>
 
-        <div class="analisis-wrap">
-          <button class="btn-main" id="mulaiAnalisisBtn" type="button">Mulai Analisis</button>
-
-          <div class="analisis-choice hidden" id="analisisChoice" aria-hidden="true">
-            <button class="btn-choice" type="button" id="quizJenisBtn">Kuis Jenis Kulit</button>
-            <button class="btn-choice" type="button" id="scanWajahBtn">Scan Wajah</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <img src="../assets/image skincare.png" alt="Ilustrasi Skincare">
-      </div>
-    </section>
-
-    <!-- SCREEN 2: QUIZ INTRO -->
-    <section class="quiz-intro screen hidden" id="screen-intro" aria-label="Intro Kuis">
+    <!-- SCREEN 1: QUIZ INTRO (was screen 2) -->
+    <section class="quiz-intro screen" id="screen-1" aria-label="Intro Kuis">
       <div class="intro-wrap">
         <div class="card intro-card">
           <p class="intro-note">
@@ -101,13 +80,16 @@
             </div>
           </div>
 
-          <button class="btn-main" id="mulaiSekarangBtn" type="button">Mulai Sekarang</button>
+          <button class="btn-main" id="startQuizBtn" type="button">Mulai Sekarang</button>
+
+          <!-- Optional: link to scan page (if you still want users to choose here) -->
+          <!-- <button class="btn-choice" type="button" id="scanWajahBtn">Scan Wajah</button> -->
         </div>
       </div>
     </section>
 
-    <!-- SCREEN 3-10: QUESTIONS -->
-    <section class="quiz screen hidden" id="screen-quiz" aria-label="Kuis Jenis Kulit">
+    <!-- SCREEN 2: QUESTIONS (8 questions inside) -->
+    <section class="quiz screen hidden" id="screen-2" aria-label="Kuis Jenis Kulit">
       <div class="quiz-shell">
         <!-- Progress -->
         <div class="progress-row" aria-label="Progress Kuis">
@@ -136,7 +118,6 @@
 
           <div class="nav-row">
             <button class="btn-nav btn-ghost" id="prevBtn" type="button">← Sebelumnya</button>
-
             <button class="btn-nav btn-next" id="nextBtn" type="button" disabled>Selanjutnya →</button>
             <button class="btn-nav btn-next hidden" id="resultBtn" type="button" disabled>Lihat Hasil</button>
           </div>
@@ -145,6 +126,7 @@
         <p class="quiz-hint" id="quizHint" aria-live="polite"></p>
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
