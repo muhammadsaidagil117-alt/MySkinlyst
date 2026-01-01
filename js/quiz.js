@@ -1,27 +1,14 @@
-/* quiz.js - Skinlyst Quiz (single-page, 10 screens total)
-   Screens:
-   1) Hero
-   2) Intro
-   3-10) Questions 1-8
+/* quiz.js - MySkinlyst Quiz (9 screens total)
+   Screen 1: Intro
+   Screen 2: Quiz (Q1..Q8 inside)
 */
 
 (function () {
-  const screens = {
-    hero: document.getElementById("screen-hero"),
-    intro: document.getElementById("screen-intro"),
-    quiz: document.getElementById("screen-quiz"),
-  };
+  const screenIntro = document.getElementById("screen-1");
+  const screenQuiz = document.getElementById("screen-2");
 
-  // Hero controls
-  const mulaiAnalisisBtn = document.getElementById("mulaiAnalisisBtn");
-  const analisisChoice = document.getElementById("analisisChoice");
-  const quizJenisBtn = document.getElementById("quizJenisBtn");
-  const scanWajahBtn = document.getElementById("scanWajahBtn");
+  const startQuizBtn = document.getElementById("startQuizBtn");
 
-  // Intro controls
-  const mulaiSekarangBtn = document.getElementById("mulaiSekarangBtn");
-
-  // Quiz UI
   const progressFill = document.getElementById("progressFill");
   const progressText = document.getElementById("progressText");
   const progressTrack = document.querySelector(".progress-track");
@@ -35,7 +22,6 @@
   const nextBtn = document.getElementById("nextBtn");
   const resultBtn = document.getElementById("resultBtn");
 
-  // 8 Questions
   const questions = [
     {
       title: "Apa jenis kelamin kamu?",
@@ -111,42 +97,28 @@
     },
   ];
 
-  // Answers for Q1..Q8
-  // Store chosen key string (e.g. "A", "B", "C")
   const answers = new Array(questions.length).fill(null);
-
-  // Current question index (0..7)
   let qIndex = 0;
 
-  // Result mapping for Q4..Q8 only
-  const skinMap = {
-    A: "dry",
-    B: "oily",
-    C: "normal",
-  };
+  const skinMap = { A: "dry", B: "oily", C: "normal" };
 
-  function showScreen(name) {
-    Object.values(screens).forEach((el) => el.classList.add("hidden"));
-    screens[name].classList.remove("hidden");
-
-    // Small UX: scroll to top of content area on screen change
+  function showIntro() {
+    screenIntro.classList.remove("hidden");
+    screenQuiz.classList.add("hidden");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function setChoiceVisibility(open) {
-    analisisChoice.classList.toggle("hidden", !open);
-    analisisChoice.setAttribute("aria-hidden", String(!open));
+  function showQuiz() {
+    screenIntro.classList.add("hidden");
+    screenQuiz.classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function progressForCurrentQuestion() {
-    // Requirement:
-    // - Progress increases only AFTER selecting an option.
-    // - On Qn page (index i), before answer = i*12.5, after answer = (i+1)*12.5
     const step = 100 / questions.length; // 12.5
     const base = qIndex * step;
     const hasAnswer = answers[qIndex] !== null;
-    const pct = Math.min(100, hasAnswer ? base + step : base);
-    return pct;
+    return Math.min(100, hasAnswer ? base + step : base);
   }
 
   function updateProgressUI() {
@@ -154,9 +126,6 @@
     progressFill.style.width = `${pct}%`;
     progressTrack?.setAttribute("aria-valuenow", String(Math.round(pct)));
 
-    // progressText shows "current / total" like screenshot style
-    // We'll display how many questions have been "completed" up to current:
-    // completed = qIndex + (answered? 1 : 0)
     const completed = qIndex + (answers[qIndex] ? 1 : 0);
     progressText.textContent = `${completed} / ${questions.length}`;
   }
@@ -164,11 +133,8 @@
   function renderQuestion() {
     const q = questions[qIndex];
 
-    // header
     questionNumber.textContent = `${qIndex + 1} / ${questions.length}`;
     questionTitle.textContent = `${qIndex + 1}. ${q.title}`;
-
-    // options
     optionsWrap.innerHTML = "";
 
     const selectedKey = answers[qIndex];
@@ -193,20 +159,16 @@
       btn.addEventListener("click", () => {
         answers[qIndex] = opt.key;
 
-        // Update selection styles
         [...optionsWrap.querySelectorAll(".option-btn")].forEach((b) => {
           b.classList.remove("selected");
           b.setAttribute("aria-checked", "false");
         });
+
         btn.classList.add("selected");
         btn.setAttribute("aria-checked", "true");
 
-        // Enable navigation
-        if (qIndex < questions.length - 1) {
-          nextBtn.disabled = false;
-        } else {
-          resultBtn.disabled = false;
-        }
+        if (qIndex < questions.length - 1) nextBtn.disabled = false;
+        else resultBtn.disabled = false;
 
         quizHint.textContent = "";
         updateProgressUI();
@@ -215,22 +177,17 @@
       optionsWrap.appendChild(btn);
     });
 
-    // buttons + states
     const hasAnswer = answers[qIndex] !== null;
+    const isLast = qIndex === questions.length - 1;
 
-    // Prev always available in quiz (Q1 goes back to intro)
+    // Prev: if Q1, go back to intro
     prevBtn.disabled = false;
 
-    // Show result button only on last question
-    const isLast = qIndex === questions.length - 1;
     resultBtn.classList.toggle("hidden", !isLast);
     nextBtn.classList.toggle("hidden", isLast);
 
-    if (!isLast) {
-      nextBtn.disabled = !hasAnswer;
-    } else {
-      resultBtn.disabled = !hasAnswer;
-    }
+    if (!isLast) nextBtn.disabled = !hasAnswer;
+    else resultBtn.disabled = !hasAnswer;
 
     updateProgressUI();
   }
@@ -241,25 +198,21 @@
   }
 
   function computeResultSlug() {
-    // Only Q4..Q8 => indices 3..7
     const counts = { dry: 0, oily: 0, normal: 0 };
 
+    // Only Q4..Q8 => indices 3..7
     for (let i = 3; i <= 7; i++) {
-      const key = answers[i]; // A/B/C
+      const key = answers[i];
       const slug = skinMap[key];
       if (slug) counts[slug]++;
     }
 
     const max = Math.max(counts.dry, counts.oily, counts.normal);
-
-    // tie handling: pick one "terserah" (we’ll use priority dry > oily > normal)
-    const priority = ["dry", "oily", "normal"];
-    const winner = priority.find((k) => counts[k] === max) || "normal";
-    return winner;
+    const priority = ["dry", "oily", "normal"]; // tie -> dry first
+    return priority.find((k) => counts[k] === max) || "normal";
   }
 
   function ensureAllAnswered() {
-    // For safety, require every question answered
     const firstMissing = answers.findIndex((a) => a === null);
     if (firstMissing !== -1) {
       quizHint.textContent = "Pilih salah satu jawaban dulu ya 😊";
@@ -269,72 +222,42 @@
     return true;
   }
 
-  /* =========================
-     Events
-  ========================= */
-  // Start: reveal quiz/scan choices
-  mulaiAnalisisBtn?.addEventListener("click", () => {
-    const isHidden = analisisChoice.classList.contains("hidden");
-    setChoiceVisibility(isHidden);
-  });
-
-  // Choose quiz
-  quizJenisBtn?.addEventListener("click", () => {
-    showScreen("intro");
-  });
-
-  // Choose scan wajah
-  scanWajahBtn?.addEventListener("click", () => {
-    // Change this filename if yours differs
-    window.location.href = "scan.html";
-  });
-
-  // Intro -> start quiz
-  mulaiSekarangBtn?.addEventListener("click", () => {
-    showScreen("quiz");
+  /* Events */
+  startQuizBtn?.addEventListener("click", () => {
+    showQuiz();
     qIndex = 0;
     renderQuestion();
   });
 
-  // Prev button
   prevBtn?.addEventListener("click", () => {
     if (qIndex === 0) {
-      // back to intro screen
-      showScreen("intro");
+      showIntro();
       return;
     }
     goToQuestion(qIndex - 1);
   });
 
-  // Next button
   nextBtn?.addEventListener("click", () => {
     if (answers[qIndex] === null) {
       quizHint.textContent = "Pilih salah satu jawaban dulu ya 😊";
       return;
     }
-    if (qIndex < questions.length - 1) {
-      goToQuestion(qIndex + 1);
-    }
+    if (qIndex < questions.length - 1) goToQuestion(qIndex + 1);
   });
 
-  // Result button
   resultBtn?.addEventListener("click", () => {
     if (answers[qIndex] === null) {
       quizHint.textContent = "Pilih salah satu jawaban dulu ya 😊";
       return;
     }
-
-    // If user somehow skips answers, force them to complete
     if (!ensureAllAnswered()) return;
 
     const slug = computeResultSlug();
-
     if (slug === "dry") window.location.href = "results-dry.html";
     else if (slug === "oily") window.location.href = "results-oily.html";
     else window.location.href = "results-normal.html";
   });
 
-  // Default: hero only
-  showScreen("hero");
-  setChoiceVisibility(false);
+  // Default: Intro (Screen 1)
+  showIntro();
 })();
