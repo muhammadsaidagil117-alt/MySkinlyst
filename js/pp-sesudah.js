@@ -48,13 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       nama: "Irwan",
       cerita:
-        "Saya merasa terbantu dengan alur penggunaan Skinlyst yang praktis. Navigasinya mudah diikuti dan informasi yang diberikan cukup ringkas, sehingga saya bisa langsung tahu langkah perawatan yang sesuai.",
+        "Saya merasa terbantu dengan alur penggunaan MySkinlyst yang praktis. Navigasinya mudah diikuti dan informasi yang diberikan cukup ringkas, sehingga saya bisa langsung tahu langkah perawatan yang sesuai.",
       avatarSrc: "../assets/image icon pp 1.png",
     },
     {
       nama: "Fani",
       cerita:
-        "Skinlyst memberikan pengalaman yang menyenangkan dengan tampilan yang rapi dan mudah dipahami. Saya bisa menemukan informasi perawatan kulit tanpa merasa bingung.",
+        "MySkinlyst memberikan pengalaman yang menyenangkan dengan tampilan yang rapi dan mudah dipahami. Saya bisa menemukan informasi perawatan kulit tanpa merasa bingung.",
       avatarSrc: "../assets/image icon pp 1.png",
     },
     {
